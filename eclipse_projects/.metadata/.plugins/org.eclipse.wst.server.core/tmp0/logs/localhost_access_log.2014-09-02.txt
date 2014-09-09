@@ -1,8 +1,0 @@
-127.0.0.1 - - [02/Sep/2014:15:38:02 -0700] "GET / HTTP/1.1" 404 994
-127.0.0.1 - - [02/Sep/2014:15:38:21 -0700] "GET /org.yuxing.javaweb.filecounter/FileCounter HTTP/1.1" 404 1078
-127.0.0.1 - - [02/Sep/2014:15:40:14 -0700] "GET / HTTP/1.1" 404 994
-127.0.0.1 - - [02/Sep/2014:15:40:14 -0700] "GET /org.yuxing.javaweb.filecounter/FileCounter HTTP/1.1" 200 39
-127.0.0.1 - - [02/Sep/2014:15:40:14 -0700] "GET /org.yuxing.javaweb.filecounter/ HTTP/1.1" 404 1056
-127.0.0.1 - - [02/Sep/2014:15:45:31 -0700] "GET / HTTP/1.1" 404 994
-127.0.0.1 - - [02/Sep/2014:15:45:31 -0700] "GET /org.yuxing.javaweb.filecounter/ HTTP/1.1" 404 1056
-127.0.0.1 - - [02/Sep/2014:15:45:32 -0700] "GET /org.yuxing.javaweb.filecounter/FileCounter HTTP/1.1" 200 142

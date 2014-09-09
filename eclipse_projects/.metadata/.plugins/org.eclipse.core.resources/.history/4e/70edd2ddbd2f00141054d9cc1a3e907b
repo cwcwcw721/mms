@@ -1,5 +1,0 @@
-package org.yuxing.javaweb.jersey.jaxb.model;
-
-public class ToDo {
-
-}

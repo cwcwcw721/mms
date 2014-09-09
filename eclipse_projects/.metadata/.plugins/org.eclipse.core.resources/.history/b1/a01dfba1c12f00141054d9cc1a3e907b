@@ -1,5 +1,0 @@
-package org.yuxing.javaweb.jersey.todo.dao;
-
-public class TodoDao {
-
-}

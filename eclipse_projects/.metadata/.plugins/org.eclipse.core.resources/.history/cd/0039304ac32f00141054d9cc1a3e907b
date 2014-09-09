@@ -1,5 +1,0 @@
-package org.yuxing.javaweb.jersey.todo.resources;
-
-public class TodosResource {
-
-}
