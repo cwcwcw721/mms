@@ -1,0 +1,25 @@
+package org.yuxing.javaweb.abtesting.amazon.model;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+public class Variation {
+	private String _name;
+	private String _projectName;
+	
+//	public String getSummary() {
+//		return summary;
+//	}
+//
+//	public void setSummary(String summary) {
+//		this.summary = summary;
+//	}
+//
+//	public String getDescription() {
+//		return description;
+//	}
+//
+//	public void setDescription(String description) {
+//		this.description = description;
+//	}
+}

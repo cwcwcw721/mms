@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+provider: gradle
+Implementation-Title: genymotion-api
+Implementation-Vendor: Genymotion
+Implementation-Version: 1.0.0
+

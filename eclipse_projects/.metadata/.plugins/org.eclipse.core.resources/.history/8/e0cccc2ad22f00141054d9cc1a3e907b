@@ -1,0 +1,14 @@
+package org.yuxing.javaweb.abtesting.amazon.model;
+
+public class Variable {
+
+	public enum VariableType {
+		BOOLEAN,
+		DOUBLE,
+		FLOAT,
+		INTEGER,
+		LONG,
+		SHORT,
+		STRING
+	}
+}

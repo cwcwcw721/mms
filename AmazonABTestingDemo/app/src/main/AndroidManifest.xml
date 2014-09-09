@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mcafee.mms.amazonabtestingdemo" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/amazon_activity_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".AmazonActivity"
+            android:label="@string/amazon_activity_name" >
+        </activity>
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SwrveActivity"
+            android:label="@string/title_activity_swrve" >
+        </activity>
+        <activity
+            android:name=".ApptimizeActivity"
+            android:label="@string/title_activity_apptimize" >
+        </activity>
+        <activity
+            android:name=".AriseActivity"
+            android:label="@string/title_activity_arise" >
+        </activity>
+        <activity
+            android:name=".LeanplumDemoActivity"
+            android:label="@string/title_activity_leanplum" >
+        </activity>
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <permission
+        android:name="com.mcafee.mms.amazonabtestingdemo.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.mcafee.mms.amazonabtestingdemo.permission.C2D_MESSAGE" />
+    <!-- App receives GCM messages. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <!-- GCM requires a Google account. -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!-- Keeps the processor from sleeping when a message is received. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Configure the aspect of the UI -->
+    <meta-data
+        android:name="SWRVE_PUSH_ICON"
+        android:resource="@drawable/ic_launcher" />
+    <meta-data
+        android:name="SWRVE_PUSH_ACTIVITY"
+        android:value=".SwrveActivity" />
+    <meta-data
+        android:name="SWRVE_PUSH_TITLE"
+        android:value="GCMSample" />
+
+    <receiver
+        android:name="com.swrve.sdk.gcm.SwrveGcmBroadcastReceiver"
+        android:permission="com.google.android.c2dm.permission.SEND" >
+        <intent-filter>
+            <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+            <category android:name="com.mcafee.mms.amazonabtestingdemo" />
+        </intent-filter>
+    </receiver>
+
+    <service android:name="com.swrve.sdk.gcm.SwrveGcmIntentService" />
+
+</manifest>

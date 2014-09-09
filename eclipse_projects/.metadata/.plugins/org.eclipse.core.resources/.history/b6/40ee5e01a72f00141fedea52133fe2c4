@@ -1,0 +1,5 @@
+package org.yuxing.javaweb.jersey.first;
+
+public class Hello {
+
+}

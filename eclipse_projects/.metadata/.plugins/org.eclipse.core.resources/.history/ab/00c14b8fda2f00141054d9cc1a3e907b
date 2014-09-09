@@ -1,0 +1,58 @@
+package org.yuxing.javaweb.abtesting.amazon.resources;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import org.yuxing.javaweb.abtesting.amazon.model.Variation;
+
+import com.amazon.insights.*;
+import com.amazon.insights.error.InsightsError;
+
+import static org.yuxing.javaweb.abtesting.amazon.CommonUtilities.*;
+
+
+@Path("/variations")
+public class Variations {
+	  @GET
+	  @Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+	  public Variation getXML() {
+		  Variation variation = new Variation();
+		  variation.setName("Name");
+		  variation.setProjectName("Project Name");
+		  Variable<String> v1 = new Variable<String> ();
+		  v1.Type = Variable.VariableType.STRING;
+		  v1.Value = "variable";
+		  variation.addVariable(v1);
+		  return variation;
+	  }
+	  
+	  // This can be used to test the integration with the browser
+//	  @GET
+//	  @Produces({ MediaType.TEXT_XML })
+//	  public ToDo getHTML() {
+//		ToDo todo = new ToDo();
+//	    todo.setSummary("This is my first todo");
+//	    todo.setDescription("This is my first todo");
+//	    return todo;
+//	  }
+	  
+	  private void initializeAmazonInsight() {
+	        // Create a credentials object using the keys from the
+	        // Amazon Apps & Games Developer Portal's A/B Testing site.
+	        InsightsCredentials credentials = AmazonInsights.newCredentials(PUBLIC_KEY, PRIVATE_KEY);
+
+	        // Initialize a new instance of AmazonInsights specifically for the application.
+	        // The AmazonInsights library requires the Android context in order to access
+	        // Android services (i.e. SharedPrefs, etc.)
+	        AmazonInsights insightsInstance = AmazonInsights.newInstance(credentials, getApplicationContext());
+	        abClient = insightsInstance.getABTestClient();
+	        eventClient = insightsInstance.getEventClient();
+
+	        displayLogMessage("Initialize Amazon Insight");
+
+	        onLoadLevel();
+	    }
+
+}

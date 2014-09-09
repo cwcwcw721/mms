@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="amazon_activity_name">Amazon A/B Testing</string>
+    <string name="text_defaultStatusText"></string>
+    <string name="labelCount">Count:</string>
+    <string name="count">0</string>
+    <string name="load_Insight">Load Amazon A/B testing</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="accept">Accept</string>
+    <string name="dialog_block_call_recommendation">Do you want to block this caller in the future?</string>
+    <string name="ignore">Ignore</string>
+    <string name="caller_is_blocked_message">The caller is blocked.</string>
+    <string name="resetCounter">Reset</string>
+    <string name="submitEvents">Submit</string>
+    <string name="title_activity_home">A/B Testing</string>
+    <string name="hello_world">Select A/B Testing Platform from the popup menu.</string>
+    <string name="action_amazon">Amazon</string>
+    <string name="action_swrve">Swrve</string>
+    <string name="title_activity_swrve">Swrve A/B Testing</string>
+    <string name="cancel">Decline</string>
+    <string name="title_activity_apptimize">Apptimize A/B Testing</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_apptimize">Apptimize</string>
+    <string name="title_activity_arise">Arise A/B Testing</string>
+    <string name="action_arise">Arise</string>
+    <string name="title_activity_leanplum">Leanplum A/B Testing</string>
+    <string name="action_leanplum">Leanplum</string>
+
+</resources>

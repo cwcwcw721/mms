@@ -1,0 +1,5 @@
+package org.yuxing.javaweb.abtesting.amazon;
+
+public class CommonUtilities {
+
+}

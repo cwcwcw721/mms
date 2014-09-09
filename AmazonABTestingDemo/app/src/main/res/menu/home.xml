@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.mcafee.mms.amazonabtestingdemo.HomeActivity" >
+    <item android:id="@+id/action_amazoninsights"
+        android:title="@string/action_amazon"/>
+    <item android:id="@+id/action_swrve"
+        android:title="@string/action_swrve"/>
+    <item android:id="@+id/action_apptimize"
+        android:title="@string/action_apptimize"/>
+    <item android:id="@+id/action_arise"
+        android:title="@string/action_arise"/>
+    <item android:id="@+id/action_leanplum"
+        android:title="@string/action_leanplum"/>
+</menu>

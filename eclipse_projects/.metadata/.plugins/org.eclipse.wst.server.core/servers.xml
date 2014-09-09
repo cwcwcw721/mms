@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v8.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v8.0 Server at localhost" name="Tomcat v8.0 Server at localhost" runtime-id="Apache Tomcat v8.0" server-type="org.eclipse.jst.server.tomcat.80" server-type-id="org.eclipse.jst.server.tomcat.80" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="12">
+    <list key="modules" value0="org.yuxing.javaweb.abtesting.amazon::org.eclipse.jst.jee.server:org.yuxing.javaweb.abtesting.amazon::jst.web::3.1" value1="org.yuxing.javaweb.filecounter::org.eclipse.jst.jee.server:org.yuxing.javaweb.filecounter::jst.web::3.1" value2="org.yuxing.javaweb.jersey.first::org.eclipse.jst.jee.server:org.yuxing.javaweb.jersey.first::jst.web::3.1" value3="org.yuxing.javaweb.jersey.jaxb::org.eclipse.jst.jee.server:org.yuxing.javaweb.jersey.jaxb::jst.web::3.1" value4="org.yuxing.javaweb.jersey.todo::org.eclipse.jst.jee.server:org.yuxing.javaweb.jersey.todo::jst.web::3.1"/>
+  </server>
+</servers>

@@ -1,0 +1,5 @@
+package org.yuxing.javaweb.filecounter.dao;
+
+public class FileDao {
+
+}
