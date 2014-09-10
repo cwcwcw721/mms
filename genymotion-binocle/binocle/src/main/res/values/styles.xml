@@ -1,0 +1,18 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="SectionTitle" parent="TextAppearance.AppCompat.Light.SearchResult.Title">
+        <item name="android:paddingTop">10dp</item>
+    </style>
+
+    <style name="warning" parent="TextAppearance.AppCompat.Light.SearchResult.Title">
+        <item name="android:padding">2dp</item>
+        <item name="android:background">@color/genyPink</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+</resources>
