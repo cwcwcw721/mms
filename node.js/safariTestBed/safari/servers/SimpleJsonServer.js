@@ -4,7 +4,7 @@ function handle_incoming_request(req, res) {
   console.log("Incoming request: (" + req.method + ") " + req.url +'\n');
   req.parsed_url = url.parse(req.url, true);
   //console.log(req.parsed_url);
-  
+
   if(req.parsed_url.pathname === '/albums'){
     handle_load_albums(req,res);
   } else if(req.parsed_url.pathname.substr(0,8) === '/albums/' && req.parsed_url.pathname.length > 8){
