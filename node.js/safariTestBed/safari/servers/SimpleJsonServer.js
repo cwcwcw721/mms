@@ -1,18 +1,91 @@
-var http = require('http'), fs = require("fs"), url = require("url");
+var http = require('http')
+	, fs = require("fs")
+	, url = require("url")
+	, path = require('path');
 
 function handle_incoming_request(req, res) {
   console.log("Incoming request: (" + req.method + ") " + req.url +'\n');
   req.parsed_url = url.parse(req.url, true);
-  //console.log(req.parsed_url);
+  var core_url = req.parsed_url.pathname;
 
-  if(req.parsed_url.pathname === '/albums'){
+  if(core_url.substr(0,9) == '/content/') {
+	  serve_static_content(req,res);
+  } else if(core_url === '/albums'){
     handle_load_albums(req,res);
-  } else if(req.parsed_url.pathname.substr(0,8) === '/albums/' && req.parsed_url.pathname.length > 8){
+  } else if(core_url.substr(0,8) === '/albums/' && core_url.length > 8){
     handle_load_photos(req,res);
   } else {
     res.writeHead(400, {'Content-Type': 'application/json'});
     res.end(JSON.stringify({error: 'Bad Request', message: "The request cannot be fulfilled due to bad syntax."}) + '\n');
   }
+}
+
+function serve_static_content(req,res){
+	var fn = req.parsed_url.pathname.substr(9);
+	var rs = fs.createReadStream('../../content/' + fn);
+	var ct = get_content_type(fn);
+	
+	//bool wrote = false;
+	
+	res.writeHead(200, {'Content-Type': ct});
+	
+//	rs.on(
+//		'readable',
+//		function(){
+//			var d = rs.read();
+//			if(!wrote){
+//				res.writeHead(200, {'Content-Type': ct});
+//				wrote = true;
+//			}
+//			
+//			if(typeof d == 'string')
+//				res.write(d);
+//			else if(typeof d == 'object' && d instanceof Buffer){
+//				if(ct.substr(0,6) == 'image/')
+//					res.write(d);
+//				else
+//					res.write(d.toString('utf8'));
+//			}
+//		}
+//	);
+//	
+//	rs.on(
+//		'end',
+//		function(){
+//			res.end();
+//		}
+//	);
+	
+	rs.on(
+		'error',
+		function(){
+			res.writeHead(400, {'Content-Type':'text/json'});
+			res.end(JSON.stringify({error: 'resource_not_found', message: 'something horrible happens!'}));
+		}
+	);
+
+	rs.pipe(res);
+}
+
+function get_content_type(fn){
+	var ext = path.extname(fn).toLowerCase();
+	
+	switch(ext){
+	case '.jpg': case '.jpeg':
+		return 'image/jpeg';
+	case '.png':
+		return 'image/png';
+	case '.gif':
+		return 'image/gif'
+	case '.js':
+		return 'text/javascript';
+	case '.css':
+		return 'text/css';
+	case '.html': case '.htm':
+		return 'text/html';
+	default:
+		return 'text/plain';
+	}
 }
 
 function handle_load_albums(req, res){
